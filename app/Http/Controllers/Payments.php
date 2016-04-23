@@ -30,7 +30,13 @@ class Payments extends Controller
 	    	}else if($type == "paymaya"){
 	    		$paymaya = new Paymaya();
 
-				$json = '{
+	    		$paymaya_info = [
+	    			'totalA'
+	    		];
+ 			
+ 			
+
+				/*$json = '{
 				  "totalAmount": {
 				    "currency": "PHP",
 				    "value": "6404.90",
@@ -103,12 +109,12 @@ class Payments extends Controller
 				    }
 				  ],
 				  "redirectUrl": {
-				    "success": "localhost/project-mcjavis/payment/success?id=6319921",
-				    "failure": "localhost/project-mcjavis/payment/success?id=6319921",
-				    "cancel": "http://shop.someserver.com/cancel?id=6319921"
+				    "success": "http://localhost/project-mcjavis/payment/success?id=6319921",
+				    "failure": "http://localhost/project-mcjavis/payment/failure?id=6319921",
+				    "cancel": "http://localhost/project-mcjavis/payment/cancel?id=6319921"
 				  },
 				  "requestReferenceNumber": "000141386713",
-				  "metadata": {}}';
+				  "metadata": {}}';*/
 
 				  //TODO change ID
 					$sample_data = json_decode ($json);
