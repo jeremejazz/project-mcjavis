@@ -353,6 +353,25 @@ table.dataTable thead .sorting:after {
     color: #df8a13;
 }
 
+.container-tabs{
+    margin-top: 20px;
+}
+
 .mytable-div{
     margin-top: 20px;
+    display: none;
+}
+
+.order-num{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.data-container{
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.hid-table-data{
+    display:none;
 }

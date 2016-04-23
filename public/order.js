@@ -6,3 +6,9 @@ $(document).ready(function () {
     $('.myTable').DataTable();
 });
 
+
+function order_list(id) {
+
+    $('#table-' + id).toggle();
+}
+

@@ -84,16 +84,16 @@
                 <ul class="nav" id="side-menu">
 
                     <li>
-                        <a href=""><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="{{ url('/admin') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-cutlery fa-fw"></i> Orders</a>
+                        <a href="{{ url('/order')}}"><i class="fa fa-cutlery fa-fw"></i> Orders</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-file fa-fw"></i> Reports</a>
+                        <a href="{{url('reports')}}"><i class="fa fa-file fa-fw"></i> Reports</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-archive fa-fw"></i> Manage Accounts</a>
+                        <a href="{{url('accounts')}}"><i class="fa fa-archive fa-fw"></i> Manage Accounts</a>
                     </li>
 
                 </ul>
