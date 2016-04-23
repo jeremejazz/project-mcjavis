@@ -36,3 +36,11 @@ Route::get('admin','AdminController@index');
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+
+/*Load all route files */
+$files = glob( __DIR__ . '/routes/*.php');
+foreach ($files as $file) {
+
+    require($file);   
+}
