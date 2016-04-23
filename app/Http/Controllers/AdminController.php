@@ -14,27 +14,30 @@ class AdminController extends Controller
         return view('administrator.administrator');
     }
 
-    public function order(){
+    public function order()
+    {
         return view('administrator.order');
     }
 
-    public function showLoginForm(){
+    public function showLoginForm()
+    {
         return view('auth.login');
     }
 
     /**
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function loginValidate( Request $request ){
+    public function loginValidate(Request $request)
+    {
         $username = $request->input('username');
-        $password  = $request->input('password');
+        $password = $request->input('password');
 
-        if ( $username == "demo" && $password == "demo" ) {
+        if ($username == "demo" && $password == "demo") {
             return redirect('/admin');
         } else {
-            \Session::flash('flash_message','Invalid username and password.');
+            \Session::flash('flash_message', 'Invalid username and password.');
             return redirect('/login');
         }
     }
