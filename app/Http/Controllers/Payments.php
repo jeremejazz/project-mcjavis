@@ -31,10 +31,69 @@ class Payments extends Controller
 	    		$paymaya = new Paymaya();
 
 	    		$paymaya_info = [
-	    			'totalA'
+	    			'totalAmount' 	=> [
+	    				'currency' 	=> 'PHP',
+	    				'value'	   	=> '',
+	    				'details'	=> [
+	    					'discount' 		=> "0",
+	    					'serviceCharge' => "0",
+	    					'shippingFee'	=> "0",
+	    					'tax'			=> "0",
+	    					'subtotal'		=> ""
+	    				]
+	    			],
+	    			'buyer' =>[
+	    				'firstName' 	=> 	'Juan',
+	    				'middleName'	=>	'',
+	    				'lastName'		=>	'Doe',
+	    				'contact'		=>	[
+	    						'phone' => '',
+	    						'email' => '', 
+	    				], 
+	    			],
+	    			"items"=> [
+				    [
+				      "name"=> "Canvas Slip Ons",
+				      "code"=> "CVG-096732",
+				      "description"=> "Shoes",
+				      "quantity"=> "3",
+				      "amount"=> [
+				        "value"=> "1621.10",
+				        "details"=> [
+				          "discount"=> "100.00",
+				          "subtotal"=> "1721.10"
+				        ]
+				      ],
+				      "totalAmount"=> [
+				        "value"=> "4863.30",
+				        "details"=> [
+				          "discount"=> "300.00",
+				          "subtotal"=> "5163.30"
+				        ]
+				      ]
+				    ],
+				    [
+				      "name"=> "PU Ballerina Flats",
+				      "code"=> "CVR-096RE2",
+				      "description"=> "Shoes",
+				      "quantity"=> "1",
+				      "amount"=> [
+				        "value"=> "600.00"
+				      ],
+				      "totalAmount"=> [
+				        "value"=> "600.00"
+				      ]
+				    ]
+				  ],
+				  "redirectUrl"=> [
+				    "success"=> "http://localhost/project-mcjavis/payment/success?id=6319921",
+				    "failure"=> "http://localhost/project-mcjavis/payment/failure?id=6319921",
+				    "cancel"=> "http://localhost/project-mcjavis/payment/cancel?id=6319921"
+				  ],
+				  "requestReferenceNumber"=> "000141386713", //ymd + 00 + sales_information_id 
 	    		];
- 			
- 			
+
+ 
 
 				/*$json = '{
 				  "totalAmount": {
