@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('admin','AdminController@index');
 
 
-Route::get('admin','admin.Admin@index');
+
 
 
 /*
