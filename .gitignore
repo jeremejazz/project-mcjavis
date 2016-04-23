@@ -3,7 +3,7 @@
 /public/storage
 Homestead.yaml
 Homestead.json
-.env
+.env 
 
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
@@ -98,3 +98,12 @@ crashlytics-build.properties
 ehthumbs.db
 Thumbs.db
 
+
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/modules.xml
+.idea/project-mcjavis.iml
+.idea/vcs.xml
+.idea/workspace.xml 

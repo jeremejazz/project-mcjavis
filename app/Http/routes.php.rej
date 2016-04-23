@@ -1,0 +1,13 @@
+diff a/app/Http/routes.php b/app/Http/routes.php	(rejected hunks)
+@@ -16,6 +16,11 @@
+  });
+  
+  
+++<<<<<<< HEAD
+++=======
++ Route::get('admin','admin.Admin@index');
++ 
+++>>>>>>> commit git ignore
+  
+  /*
+  |--------------------------------------------------------------------------
