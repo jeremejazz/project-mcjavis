@@ -22,8 +22,8 @@ class Payments extends Controller
 
     	if($request->isMethod('get')){
 
-    		$cart_data = $cart->getItems();
-    		print_r($cart_data);
+    		$cart_data = $cart->getItems(); 
+    		
     		return view('payment.checkout', ['cart_data' => $cart_data]);
     	}else if($request->isMethod('post')){
     		 	$type =	$request->input('type');
@@ -45,14 +45,17 @@ class Payments extends Controller
 
 	    		foreach ($cart->getItems() as $key => $value) {
 	    			array_push($items, 
+	    				[
 	    				[ "name"=> $value['name'],  
 				      		"quantity"=> $value['qty'],
 				      		"amount"=> [
 				        		"value"=> $value['price']
-				      ],
-				      "totalAmount"=> [
-				        "value"=> $value['price'] * $value['qty']
-				      ]);
+				        	]
+				      	],
+				      	"totalAmount"=> [
+				       	 "value"=> $value['price'] * $value['qty']
+				      	]]
+				      );
 	    		}
 
 	    		$paymaya_info = [
