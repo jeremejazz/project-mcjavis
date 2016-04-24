@@ -41,6 +41,20 @@ class Payments extends Controller
 	    	}else if($type == "paymaya"){
 	    		$paymaya = new Paymaya();
 
+	    		$items = [];
+
+	    		foreach ($cart->getItems() as $key => $value) {
+	    			array_push($items, 
+	    				[ "name"=> $value['name'],  
+				      		"quantity"=> $value['qty'],
+				      		"amount"=> [
+				        		"value"=> $value['price']
+				      ],
+				      "totalAmount"=> [
+				        "value"=> $value['price'] * $value['qty']
+				      ]);
+	    		}
+
 	    		$paymaya_info = [
 	    			'totalAmount' 	=> [
 	    				'currency' 	=> 'PHP',
@@ -62,40 +76,7 @@ class Payments extends Controller
 	    						'email' => '', 
 	    				], 
 	    			],
-	    			"items"=> [
-				    [
-				      "name"=> "Canvas Slip Ons",
-				      "code"=> "CVG-096732",
-				      "description"=> "Shoes",
-				      "quantity"=> "3",
-				      "amount"=> [
-				        "value"=> "1621.10",
-				        "details"=> [
-				          "discount"=> "100.00",
-				          "subtotal"=> "1721.10"
-				        ]
-				      ],
-				      "totalAmount"=> [
-				        "value"=> "4863.30",
-				        "details"=> [
-				          "discount"=> "300.00",
-				          "subtotal"=> "5163.30"
-				        ]
-				      ]
-				    ],
-				    [
-				      "name"=> "PU Ballerina Flats",
-				      "code"=> "CVR-096RE2",
-				      "description"=> "Shoes",
-				      "quantity"=> "1",
-				      "amount"=> [
-				        "value"=> "600.00"
-				      ],
-				      "totalAmount"=> [
-				        "value"=> "600.00"
-				      ]
-				    ]
-				  ],
+	    			"items"=> $items,
 				  "redirectUrl"=> [
 				    "success"=> $url . "payment/success?id=6319921",
 				    "failure"=>  $url . "payment/failure?id=6319921",
