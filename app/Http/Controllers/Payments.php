@@ -8,21 +8,32 @@ use App\Http\Requests;
 
 use App\Libraries\Payments\Paymaya;
 
+use App\Libraries\Cart;
+
 class Payments extends Controller
 {
     public function index(){
     	return view('payment/index');
     }
 
-    function checkout(Request $request){
-	 	$type =	$request->input('type');
+    public function checkout(Request $request){
+
+    	$cart = new Cart();
+
+    	if($request->isMethod('get')){
+
+    		$cart_data = $cart->getItems();
+    		print_r($cart_data);
+    		return view('payment.checkout', ['cart_data' => $cart_data]);
+    	}else if($request->isMethod('post')){
+    		 	$type =	$request->input('type');
 	    	if($type == "cash"){
 
 
 
 	    		//TODO database transaciton 
 	    		//update db
-
+	    	$url = url('/');
 
 	    		return response()->json([
 	    			'status' => 'success'
@@ -86,9 +97,9 @@ class Payments extends Controller
 				    ]
 				  ],
 				  "redirectUrl"=> [
-				    "success"=> "http://localhost/project-mcjavis/payment/success?id=6319921",
-				    "failure"=> "http://localhost/project-mcjavis/payment/failure?id=6319921",
-				    "cancel"=> "http://localhost/project-mcjavis/payment/cancel?id=6319921"
+				    "success"=> $url . "payment/success?id=6319921",
+				    "failure"=>  $url . "payment/failure?id=6319921",
+				    "cancel"=>  $url . "payment/cancel?id=6319921"
 				  ],
 				  "requestReferenceNumber"=> "000141386713", //ymd + 00 + sales_information_id 
 	    		];
@@ -188,6 +199,21 @@ class Payments extends Controller
 	    		//set callback url
 	    		//set web hook
 	    	}
+
+    	}
+	
     }
+
+    public function success(){
+
+    }
+
+    public function failure(){
+
+    }
+
+    public function cancel(){
+    	
+    		    }
 }
 
