@@ -1,0 +1,97 @@
+body {
+    
+}
+.navbar {
+    z-index: 10;
+}
+.nav-shadow {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.carousel {
+    margin-top: -20px;
+}
+.carousel-inner,
+.carousel-inner .item {
+    height: 100%;
+    min-height: 300px;
+}
+.carousel .carousel-indicators .active {
+    background-color: #904ACC;
+}
+.carousel-indicators li {
+    border: 1px solid #993154;
+}
+
+.item:nth-child(1) {
+    background-image: url(../img/background1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.item:nth-child(2) {
+    background-image: url(../img/background2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.item:nth-child(3) {
+    background-image: url(../img/background3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-content {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+/* table */
+.quantity-input {
+    width: 50px !important;
+}
+#foodTable th {
+    border-top: 5px solid #D39FFF;
+    border-bottom: 2px solid rgba(72, 72, 72, 0.15);
+    background-color: #6AD5FF;
+    color: #505050;
+}
+.table>tbody>tr>td {
+    border-top: 1px solid #DE9DFF;
+    color: #231210;
+    text-shadow: 0 0 2px #DE9DFF;
+}
+.table>tbody>tr:nth-child(4)>td:nth-child(3) {
+    color:red;
+}
+
+/* order type  */
+#dropdown-order-type .dropdown-toggle {
+    margin-bottom: 0;
+    margin-left: 0;
+}
+#name-senior-type,#dropdown-order-type {
+    background-color: #545454;
+    padding-bottom: 12px;
+}
+.dropdown-menu li > a, .dropdown-menu li > span {
+    color: #333333;
+}
+.btn .caret {
+    margin-left: 20px;
+}
+.cart-detail {
+    color: red;
+    font-weight: bold;
+}
+.collection,
+.collection .collection-item,
+.collection.with-header .collection-header{
+    border-color: #DE9DFF;
+}
+.dropdown-menu {
+    background-color: ##FBFFC1;
+}
+.dropdown-menu li > a, .dropdown-menu li > span {
+    font-size: 1.1rem;
+}
+
