@@ -70,7 +70,7 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="{{ url('/login')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -90,10 +90,10 @@
                         <a href="{{ url('/order')}}"><i class="fa fa-cutlery fa-fw"></i> Orders</a>
                     </li>
                     <li>
-                        <a href="{{url('reports')}}"><i class="fa fa-file fa-fw"></i> Reports</a>
+                        <a href="{{url('/reports')}}"><i class="fa fa-file fa-fw"></i> Reports</a>
                     </li>
                     <li>
-                        <a href="{{url('accounts')}}"><i class="fa fa-archive fa-fw"></i> Manage Accounts</a>
+                        <a href="{{url('/accounts')}}"><i class="fa fa-archive fa-fw"></i> Manage Accounts</a>
                     </li>
 
                 </ul>
