@@ -13,4 +13,8 @@ class AdminController extends Controller
     {
         return view('administrator.administrator');
     }
+
+    public function order(){
+        return view('administrator.order');
+    }
 }
