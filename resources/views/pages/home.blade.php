@@ -25,7 +25,7 @@
                     <div data-animation="animated fadeInRightBig">
                         <h2 class="h2-responsive">
                             Do you want Unhealthy Food</h2>
-                        <a href="menu-page.html" class="btn btn-primary waves-effect waves-light">Go to Menu</a>
+                        <a href="{{ url('/menu-order') }}" class="btn btn-primary waves-effect waves-light">Go to Menu</a>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="carousel-caption">
                     <div data-animation="animated fadeInDownBig">
                         <h2 class="h2-responsive">Do you Want Slightly Healthy Food</h2>
-                        <a href="menu-page.html" class="btn btn-primary waves-effect waves-light">Go to Menu</a>
+                        <a href="{{ url('/menu-order') }}" class="btn btn-primary waves-effect waves-light">Go to Menu</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                 <div class="carousel-caption">
                     <div data-animation="animated fadeInLeftBig">
                         <h2 class="h2-responsive">Do you want Healthy and lovely food.</h2>
-                        <a href="menu-page.html" class="btn btn-primary waves-effect waves-light">Go to Menu</a>
+                        <a href="{{ url('/menu-order') }}" class="btn btn-primary waves-effect waves-light">Go to Menu</a>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                         <p>Some things just look better in motion and in the highly competitive world of fashion, finding an edge over the competition...</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">
+                        <a href="{{ url('/menu-order') }}">
                             <button type="button" class="btn btn-info waves-effect waves-light">Read more</button>
                         </a>
                     </div>
@@ -98,7 +98,7 @@
                         <p>Did you know that a strong brand is absolutely essential for generating sales and growth on Social Media? You may...</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">
+                        <a href="{{ url('/menu-order') }}">
                             <button type="button" class="btn btn-info waves-effect waves-light">Read more</button>
                         </a>
                     </div>
@@ -112,10 +112,10 @@
                         <span class="card-title">Photographer Portfolio</span>
                     </div>
                     <div class="card-content">
-                        <p>Photography is an art of observation. It’s about finding something interesting an ordinary place… I’ve found it has little to do with ...</p>
+                        <p>Photography is an art of observation. Itï¿½s about finding something interesting an ordinary placeï¿½ Iï¿½ve found it has little to do with ...</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">
+                        <a href="{{ url('/menu-order') }}">
                             <button type="button" class="btn btn-info waves-effect waves-light">Read more</button>
                         </a>
                     </div>
