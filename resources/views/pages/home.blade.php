@@ -24,7 +24,7 @@
                 <div class="carousel-caption">
                     <div data-animation="animated fadeInRightBig">
                         <h2 class="h2-responsive">
-                            Do you want Unhealthy Food</h2>
+                            Welcome to Fastfood</h2>
                         <a href="{{ url('/menu-order') }}" class="btn btn-primary waves-effect waves-light">Go to Menu</a>
                     </div>
                 </div>

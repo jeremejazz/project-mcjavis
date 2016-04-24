@@ -7,101 +7,124 @@
 @section('body-content')
 
 
-<!--  Menu Section -->
+        <!--  Menu Section -->
 <section id="menuSection">
     <div class="container">
-        <div class="row" id="cart-detail">
+        <div class="row" id="name-senior-type">
+            <div class="input-field col-md-6">
+                <input placeholder="Costumer Name" id="name" type="text" class="validate">
+                <label class="active" for="first_name2">Full Name</label>
+
+            </div>
             <div class="col-md-6">
-                <ul class="collection with-header">
-                    <li class="collection-header">
-                        <h4>Order Details</h4></li>
-                    <li class="collection-item">
-                        Name:
-                        <span class="cart-detail cart-detail-name">Juan Dela Cruz</span>
-                    </li>
-                    <li class="collection-item">
-                        Senior Citizen:
-                        <span class="cart-detail cart-detail-seniors">Yes</span>
-                    </li>
-                    <li class="collection-item">
-                        Table Number:
-                        <span class="cart-detail cart-detail-table-number">23045</span>
-                    </li>
-                    <li class="collection-item">
-                        Order Type:
-                        <span class="cart-detail cart-detail-order-type">Dine-In</span>
-                    </li>
-                    <li class="collection-item">
-                        Total Amount:
-                        <span class="cart-detail cart-detail-total">200.00</span>
-                        <span class="cart-detail">Php</span>
-                    </li>
-                    <li class="collection-item">
-                        Pay Via Pay Maya:
-                        <a href="pay-maya-page.html" class="btn btn-success waves-effect waves-light">Click Here</a>
-                    </li>
-                </ul>
+                <form action="#">
+                    <p>
+                        <input type="checkbox" id="senior"  />
+                        <label for="test6">Senior Citizen</label>
+                    </p>
+                </form>
             </div>
-            <div class="col-md-6" id="foodTable">
-                <h5>Order Food Summary</h5>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Food</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="food-menu">Burger</td>
-                        <td>
-
-                                    <span><input placeholder="1" id="burger-menu" type="number" class="quantity-input" disabled>
-                                    </span>
-
-                        </td>
-                        <td><span class="price">100.00</span>
-                            Php
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="food-menu">Coffe w/  Tinapay</td>
-                        <td>
-                                    <span><input placeholder="1" id="burger-menu" type="number" class="quantity-input" disabled>
-                                    </span>
-                        </td>
-                        <td><span class="price">100.00</span>
-                            Php
-                        </td>
-
-                    </tr>
-                    <tr >
-                        <td class="food-menu">Frice w/ Burger </td>
-                        <td>
-                                    <span><input placeholder="1" id="burger-menu" type="number" class="quantity-input" disabled>
-                                    </span>
-                        </td>
-                        <td><span class="price">100.00</span>
-                            Php
-                        </td>
-
-                    </tr>
-                    <tr >
-                        <td></td>
-                        <td></td>
-                        <td>Total <span class="total-price">200.00</span>
-                            php
-                        </td>
-
-                    </tr>
-                    </tbody>
-                </table>
+        </div>
+        <div class="row" id="dropdown-order-type">
+            <div class="input-field col-md-6">
+                <input placeholder="Enter Number" id="name" type="text" class="validate">
+                <label class="active" for="first_name2"> Table Number</label>
             </div>
+            <div class="input-field col-md-6">
+                <label class="active" for="order-type"> Order Type</label>
+                <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle waves-effect waves-light" type="button" data-toggle="dropdown">Order Type
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Dine-In</a></li>
+                        <li><a href="#">Take-Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="foodTable">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="food-menu">Burger</td>
+                    <td>
+                                    <span class="minus-btn">
+                                        <a class="btn-floating btn-small waves-effect waves-light violet"><i class="material-icons glyphicon glyphicon-minus"></i>
+                                        </a>
+                                    </span>
+                                    <span><input placeholder="0" id="burger-menu" type="number" class="quantity-input">
+                                    </span>
+                                    <span class="plus-btn">
+                                        <a class="btn-floating btn-small waves-effect waves-light violet"><i class="material-icons">add</i>
+                                        </a>
+                                    </span>
+                    </td>
+                    <td><span class="price">100.00</span>
+                        Php
+                    </td>
+                </tr>
+                <tr>
+                    <td class="food-menu">Coffe w/  Tinapay</td>
+                    <td>
+                                    <span class="minus-btn">
+                                        <a class="btn-floating btn-small waves-effect waves-light violet"><i class="material-icons glyphicon glyphicon-minus"></i>
+                                        </a>
+                                    </span>
+                                    <span><input placeholder="0" id="coffe-menu" type="number" class="quantity-input">
+                                    </span>
+                                    <span class="plus-btn">
+                                        <a class="btn-floating btn-small waves-effect waves-light violet"><i class="material-icons">add</i>
+                                        </a>
+                                    </span>
+                    </td>
+                    <td><span class="price">100.00</span>
+                        Php
+                    </td>
+
+                </tr>
+                <tr >
+                    <td class="food-menu">Frice w/ Burger </td>
+                    <td>
+                                    <span class="minus-btn">
+                                        <a class="btn-floating btn-small waves-effect waves-light violet"><i class="material-icons glyphicon glyphicon-minus"></i>
+                                        </a>
+                                    </span>
+                                    <span><input placeholder="0" id="frice-menu" type="number" class="quantity-input">
+                                    </span>
+                                    <span class="plus-btn">
+                                        <a class="btn-floating btn-small waves-effect waves-light violet"><i class="material-icons">add</i>
+                                        </a>
+                                    </span>
+                    </td>
+                    <td><span class="price">100.00</span>
+                        Php
+                    </td>
+
+                </tr>
+                <tr >
+                    <td></td>
+                    <td></td>
+                    <td>Total
+                        <span class="total-price">200.00</span>
+                        php
+                        <a href="{{ url('cart') }}" class="btn btn-success waves-effect waves-light">Order Now</a>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
-<!--  Menu Section -->
+
 
 
 

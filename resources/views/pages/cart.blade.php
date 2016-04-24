@@ -38,7 +38,7 @@
                     </li>
                     <li class="collection-item">
                         Pay Via Pay Maya:
-                        <a href="pay-maya-page.html" class="btn btn-success waves-effect waves-light">Click Here</a>
+                        <a href="{{ url('payment') }}" class="btn btn-success waves-effect waves-light">Click Here</a>
                     </li>
                 </ul>
             </div>
