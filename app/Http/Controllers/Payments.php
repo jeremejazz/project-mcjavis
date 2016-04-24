@@ -15,19 +15,18 @@ class Payments extends Controller
     public function index(){
     	return view('payment/index');
     }
-
     public function checkout(Request $request){
 
     	$cart = new Cart();
 
-    	if($request->isMethod('get')){
+    	// if($request->isMethod('get')){
 
     		$cart_data = $cart->getItems(); 
-    		
-    		return view('payment.checkout', ['cart_data' => $cart_data]);
-    	}else if($request->isMethod('post')){
+
+    		// return view('payment.checkout', ['cart_data' => $cart_data]);
+    	// }else if($request->isMethod('post')){
     		 	$type =	$request->input('type');
-	    	if($type == "cash"){
+	    	// if($type == "cash"){
 
 
 
@@ -35,10 +34,10 @@ class Payments extends Controller
 	    		//update db
 	    	$url = url('/');
 
-	    		return response()->json([
+	    	/*	return response()->json([
 	    			'status' => 'success'
-	    			]);
-	    	}else if($type == "paymaya"){
+	    			]);*/
+	    	// }else if($type == "paymaya"){
 	    		$paymaya = new Paymaya();
 
 	    		$items = [];
@@ -50,7 +49,8 @@ class Payments extends Controller
 				      		"quantity"=> $value['qty'],
 				      		"amount"=> [
 				        		"value"=> $value['price']
-				        	]
+				        	],
+				        	'description' => '',
 				      	],
 				      	"totalAmount"=> [
 				       	 "value"=> $value['price'] * $value['qty']
@@ -58,25 +58,25 @@ class Payments extends Controller
 				      );
 	    		}
 
-	    		$paymaya_info = [
+	    		/*$paymaya_info = [
 	    			'totalAmount' 	=> [
 	    				'currency' 	=> 'PHP',
-	    				'value'	   	=> '',
+	    				'value'	   	=> '100',
 	    				'details'	=> [
-	    					'discount' 		=> "0",
-	    					'serviceCharge' => "0",
-	    					'shippingFee'	=> "0",
-	    					'tax'			=> "0",
-	    					'subtotal'		=> ""
+	    					'discount' 		=> "10",
+	    					'serviceCharge' => "10",
+	    					'shippingFee'	=> "10",
+	    					'tax'			=> "10",
+	    					'subtotal'		=> "100"
 	    				]
 	    			],
 	    			'buyer' =>[
 	    				'firstName' 	=> 	'Juan',
-	    				'middleName'	=>	'',
+	    				'middleName'	=>	'dela',
 	    				'lastName'		=>	'Doe',
 	    				'contact'		=>	[
-	    						'phone' => '',
-	    						'email' => '', 
+	    						'phone' => '111',
+	    						'email' => '111', 
 	    				], 
 	    			],
 	    			"items"=> $items,
@@ -88,10 +88,10 @@ class Payments extends Controller
 				  ],
 				  "requestReferenceNumber"=> "000141386713", //ymd + 00 + sales_information_id 
 	    		];
-
+*/
  
 
-				/*$json = '{
+				 $json = '{
 				  "totalAmount": {
 				    "currency": "PHP",
 				    "value": "6404.90",
@@ -164,28 +164,31 @@ class Payments extends Controller
 				    }
 				  ],
 				  "redirectUrl": {
-				    "success": "http://localhost/project-mcjavis/payment/success?id=6319921",
-				    "failure": "http://localhost/project-mcjavis/payment/failure?id=6319921",
-				    "cancel": "http://localhost/project-mcjavis/payment/cancel?id=6319921"
+				    "success": "' . $url . 'payment/success?id=6319921",
+				    "failure": "' . $url . 'payment/failure?id=6319921",
+				    "cancel": "' . $url . 'payment/cancel?id=6319921"
 				  },
 				  "requestReferenceNumber": "000141386713",
-				  "metadata": {}}';*/
+				  "metadata": {}}';
 
 				  //TODO change ID
 					$sample_data = json_decode ($json);
 
 
 					$response = $paymaya->checkout($sample_data);
-					return $response->getBody();
+					$body = json_decode($response->getBody());
+
+					 header("Location: " . $body->redirectUrl );
+					 exit();
 	    		//get data
 
 	    		//redirect to paymaya 
 
 	    		//set callback url
 	    		//set web hook
-	    	}
+	    	// }
 
-    	}
+    	// }
 	
     }
 

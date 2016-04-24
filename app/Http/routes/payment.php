@@ -1,7 +1,7 @@
 <?php
 //All payment routes
 
-Route::get('/payment', 'Payments@index');
+Route::get('/payment', 'Payments@checkout');
 
 Route::get('/payment/checkout', 'Payments@checkout');
 Route::post('/payment/checkout', 'Payments@checkout');
