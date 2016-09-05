@@ -106,5 +106,3 @@ Thumbs.db
 .idea/project-mcjavis.iml
 .idea/vcs.xml
 .idea/workspace.xml 
-
-config/database.php
