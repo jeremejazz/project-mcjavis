@@ -3,7 +3,7 @@
 /public/storage
 Homestead.yaml
 Homestead.json
-
+.env
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
 
